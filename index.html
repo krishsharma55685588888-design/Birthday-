@@ -13,13 +13,13 @@
 
 <body>
     <audio id="birthdayAudio" loop>
-        <source src="./music/birthday_tune.mp3" type="audio/mpeg">
+        <source src="birthday_tune.mp3" type="audio/mpeg">
     </audio>
 
     <div id="wrapper">
         <div class="flag__birthday">
-            <img src="./images/1.png" alt="" width="350" class="flag__left">
-            <img src="./images/1.png" alt="" width="350" class="flag__right">
+            <img src="1.png" alt="" width="350" class="flag__left">
+            <img src="1.png" alt="" width="350" class="flag__right">
         </div>
         <div class="content">
             <div class="left">
@@ -42,7 +42,7 @@
                         <span style="--t: 6.4s;">y</span>
                     </h1>
                     <div class="hat">
-                        <img src="./images/hat.png" alt="" width="130">
+                        <img src="hat.png" alt="" width="130">
                     </div>
                 </div>
                 <div class="date__of__birth">
@@ -60,7 +60,7 @@
             <div class="right">
                 <div class="box__account">
                     <div class="image">
-                        <img src="./images/img.jpg" alt="Nisha Bhua">
+                        <img src="img.jpg" alt="Nisha Bhua">
                     </div>
                     <div class="name">
                         <i class="fa-solid fa-heart"></i>
@@ -68,10 +68,10 @@
                         <i class="fa-solid fa-heart"></i>
                     </div>
                     <div class="balloon_one">
-                        <img width="100px" src="./images/balloon1.png" alt="">
+                        <img width="100px" src="balloon1.png" alt="">
                     </div>
                     <div class="balloon_two">
-                        <img width="100px" src="./images/balloon2.png" alt="">
+                        <img width="100px" src="balloon2.png" alt="">
                     </div>
                 </div>
                 <div class="cricle">
@@ -93,10 +93,10 @@
         </div>
 
         <div class="decorate_bottom">
-            <img src="./images/decorate.png" alt="" width="100">
+            <img src="decorate.png" alt="" width="100">
         </div>
         <div class="smiley__icon">
-            <img src="./images/smiley_icon.png" alt="" width="100">
+            <img src="smiley_icon.png" alt="" width="100">
         </div>
 
         <div class="boxMail">
@@ -104,12 +104,12 @@
             <div class="boxMail-container">
                 <div class="card1">
                     <div class="userImg">
-                        <img src="images/img.jpg" alt="">
+                        <img src="img.jpg" alt="">
                     </div>
                     <h4 class="username">To: Nisha Bhua 💖</h4>
                     <h3>Happy Birthday</h3>
                     <div class="imageCute">
-                        <img src="./images/mewmew.gif" alt="" width="80">
+                        <img src="mewmew.gif" alt="" width="80">
                     </div>
                 </div>
                 <div class="card2">
@@ -123,11 +123,10 @@
     </div>
 
     <script>
-        let datetxt = "10 February"; // Updated Date
+        let datetxt = "10 February"; 
         let currentIndex = 0;
         let date__of__birth = document.querySelector(".date__of__birth span");
-        
-        // Music logic
+
         const audio = document.getElementById('birthdayAudio');
 
         setTimeout(function () {
@@ -141,7 +140,6 @@
             }, 100);
         }, 10000);
 
-        // Open Mail and Play Music
         $('#btn__letter').on("click", function () {
             $('.boxMail').addClass('active');
             audio.play().catch(e => console.log("Music play error:", e));
@@ -152,5 +150,4 @@
         });
     </script>
 </body>
-
 </html>
