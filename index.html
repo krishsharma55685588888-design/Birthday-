@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Nisha Bhua!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <audio id="birthdayAudio" loop>
+        <source src="./music/birthday_tune.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="wrapper">
+        <div class="flag__birthday">
+            <img src="./images/1.png" alt="" width="350" class="flag__left">
+            <img src="./images/1.png" alt="" width="350" class="flag__right">
+        </div>
+        <div class="content">
+            <div class="left">
+                <div class="title">
+                    <h1 class="happy">
+                        <span style="--t: 4s;">H</span>
+                        <span style="--t: 4.2s;">a</span>
+                        <span style="--t: 4.4s;">p</span>
+                        <span style="--t: 4.6s;">p</span>
+                        <span style="--t: 4.8s;">y</span>
+                    </h1>
+                    <h1 class="birthday">
+                        <span style="--t: 5s;">B</span>
+                        <span style="--t: 5.2s;">i</span>
+                        <span style="--t: 5.4s;">r</span>
+                        <span style="--t: 5.6s;">t</span>
+                        <span style="--t: 5.8s;">h</span>
+                        <span style="--t: 6s;">d</span>
+                        <span style="--t: 6.2s;">a</span>
+                        <span style="--t: 6.4s;">y</span>
+                    </h1>
+                    <div class="hat">
+                        <img src="./images/hat.png" alt="" width="130">
+                    </div>
+                </div>
+                <div class="date__of__birth">
+                    <span></span>
+                </div>
+                <div class="btn">
+                    <button id="btn__letter">
+                        <div class="mail">
+                            Click Here Nisha Bhua
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="right">
+                <div class="box__account">
+                    <div class="image">
+                        <img src="./images/img.jpg" alt="Nisha Bhua">
+                    </div>
+                    <div class="name">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Pyaari Nisha Bhua</span>
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="balloon_one">
+                        <img width="100px" src="./images/balloon1.png" alt="">
+                    </div>
+                    <div class="balloon_two">
+                        <img width="100px" src="./images/balloon2.png" alt="">
+                    </div>
+                </div>
+                <div class="cricle">
+                    <div class="text__cricle">
+                        <span style="--i: 1;">n</span>
+                        <span style="--i: 2;">i</span>
+                        <span style="--i: 3;">s</span>
+                        <span style="--i: 4;">h</span>
+                        <span style="--i: 5;">a</span>
+                        <span style="--i: 6;">-</span>
+                        <span style="--i: 7;">b</span>
+                        <span style="--i: 8;">h</span>
+                        <span style="--i: 9;">u</span>
+                        <span style="--i: 10;">a</span>
+                    </div>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="decorate_bottom">
+            <img src="./images/decorate.png" alt="" width="100">
+        </div>
+        <div class="smiley__icon">
+            <img src="./images/smiley_icon.png" alt="" width="100">
+        </div>
+
+        <div class="boxMail">
+            <i class="fa-solid fa-xmark"></i>
+            <div class="boxMail-container">
+                <div class="card1">
+                    <div class="userImg">
+                        <img src="images/img.jpg" alt="">
+                    </div>
+                    <h4 class="username">To: Nisha Bhua 💖</h4>
+                    <h3>Happy Birthday</h3>
+                    <div class="imageCute">
+                        <img src="./images/mewmew.gif" alt="" width="80">
+                    </div>
+                </div>
+                <div class="card2">
+                    <div class="card2-content">
+                        <h3>Dear Bhua!</h3>
+                        <h2>Janamdin Mubarak ho Nisha Bhua! 🥳🎂 Aap duniya ki sabse best bhua ho. Aapka bhatija hone par mujhe garv hai. Bhagwan kare aap hamesha muskurati rahein. Party kab de rahi hain? 🎈🎁</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let datetxt = "10 February"; // Updated Date
+        let currentIndex = 0;
+        let date__of__birth = document.querySelector(".date__of__birth span");
+        
+        // Music logic
+        const audio = document.getElementById('birthdayAudio');
+
+        setTimeout(function () {
+            let timeDatetxt = setInterval(function () {
+                if (currentIndex < datetxt.length) {
+                    date__of__birth.textContent += datetxt[currentIndex];
+                    currentIndex++;
+                } else {
+                    clearInterval(timeDatetxt);
+                }
+            }, 100);
+        }, 10000);
+
+        // Open Mail and Play Music
+        $('#btn__letter').on("click", function () {
+            $('.boxMail').addClass('active');
+            audio.play().catch(e => console.log("Music play error:", e));
+        });
+
+        $('.fa-xmark').on("click", function () {
+            $('.boxMail').removeClass('active');
+        });
+    </script>
+</body>
+
+</html>
